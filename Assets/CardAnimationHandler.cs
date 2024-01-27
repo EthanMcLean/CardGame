@@ -14,6 +14,15 @@ public class CardAnimationHandler : MonoBehaviour
 
     public AudioSource voice;
 
+    public Transform playerTalking;
+    public Transform aiTalking;
+
+    public Transform playerNotTalking;
+    public Transform aiNotTalking;
+
+    public Transform playerTalkingObject;
+    public Transform aiTalkingObject;
+
     public void Awake()
     {
         instance = this; 
@@ -31,7 +40,7 @@ public class CardAnimationHandler : MonoBehaviour
     }
 
 
-    public void AddMoveCardAnimation(Transform fromTrans, Transform toTrans, PlayerManager owner, string newZone, CardData data, bool PlayCard)
+    public void AddMoveCardAnimation(Transform fromTrans, Transform toTrans, PlayerManager owner, string newZone, CardData data, bool PlayCard, bool skipVoice)
     {
         CardMovementAnimation newAnim = new CardMovementAnimation();
         GameObject cardSpace = Instantiate(GameManager.instance.cardSpacePrefab, toTrans);
@@ -41,6 +50,7 @@ public class CardAnimationHandler : MonoBehaviour
         newAnim.cardToMove.GetComponent<RectTransform>().sizeDelta *= data.size;
         newAnim.cardToMove.SetActive(false);
         newAnim.playCard = PlayCard;
+        newAnim.skipVoice = skipVoice;
 
         Card newCard = newAnim.cardToMove.GetComponent<Card>();
         if (owner == GameManager.instance.ai && newZone == "Hand")
@@ -105,24 +115,40 @@ public class CardMovementAnimation: GameAnimation
     public float speed = 10f;
     public float lerp;
     public bool playCard;
+    public bool skipVoice;
     public override IEnumerator AnimationCoroutine()
     {
         card = cardToMove.GetComponent<Card>();
-        if (playCard)
+        if (playCard && !skipVoice)
         {
             CardAnimationHandler.instance.voice.clip = owner.summonClip;
             CardAnimationHandler.instance.voice.Play();
+            
         }
-        else
+        else if (!skipVoice)
         {
             CardAnimationHandler.instance.voice.clip = owner.drawClip;
-            //CardAnimationHandler.instance.voice.Play();
+
+            CardAnimationHandler.instance.voice.Play();
         }
+        if (owner == GameManager.instance.player && !skipVoice)
+        {
+            CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerTalking);
+            CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
+        }
+        else if (!skipVoice)
+        {
+            CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiTalking);
+            CardAnimationHandler.instance.aiTalkingObject.localPosition = Vector3.zero;
+        }
+
         while (CardAnimationHandler.instance.voice.isPlaying)
         {
             yield return null;
         }
-        if (playCard)
+
+        
+        if (playCard && !skipVoice)
         {
             if(owner == GameManager.instance.player)
             {
@@ -157,6 +183,12 @@ public class CardMovementAnimation: GameAnimation
         {
             yield return null;
         }
+
+        CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerNotTalking);
+        CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
+        CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiNotTalking);
+        CardAnimationHandler.instance.aiTalkingObject.localPosition = Vector3.zero;
+
         CardAnimationHandler.instance.FinishAnimation();
         CardAnimationHandler.instance.TryToTriggerNextAnimation();
     }
@@ -174,7 +206,18 @@ public class CardAttackAnimation : GameAnimation
 
         CardAnimationHandler.instance.voice.clip = attacker.owner.attackClip;
         CardAnimationHandler.instance.voice.Play();
-    
+
+        if (attacker.owner == GameManager.instance.player)
+        {
+            CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerTalking);
+            CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
+        }
+        else
+        {
+            CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiTalking);
+            CardAnimationHandler.instance.aiTalkingObject.localPosition = Vector3.zero;
+        }
+
         while (CardAnimationHandler.instance.voice.isPlaying)
         {
             yield return null;
@@ -227,15 +270,36 @@ public class CardAttackAnimation : GameAnimation
             yield return null;
         }
 
+        CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerNotTalking);
+        CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
+        CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiNotTalking);
+        CardAnimationHandler.instance.aiTalkingObject.localPosition = Vector3.zero;
+
         if (defender.currentDamage >= defender.data.health)
         {
             CardAnimationHandler.instance.voice.clip = defender.owner.negativeReaction;
             CardAnimationHandler.instance.voice.Play();
 
+            if (defender.owner == GameManager.instance.player)
+            {
+                CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerTalking);
+                CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
+            }
+            else
+            {
+                CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiTalking);
+                CardAnimationHandler.instance.aiTalkingObject.position = Vector3.zero;
+            }
+
             while (CardAnimationHandler.instance.voice.isPlaying)
             {
                 yield return null;
             }
+
+            CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerNotTalking);
+            CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
+            CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiNotTalking);
+            CardAnimationHandler.instance.aiTalkingObject.localPosition = Vector3.zero;
 
             GameManager.instance.DestoryCardInCombat(defender);
 

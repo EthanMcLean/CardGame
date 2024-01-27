@@ -40,6 +40,13 @@ public class GameManager : MonoBehaviour
     public Card cardSelectedForCombat;
 
     public GameObject victory;
+
+    public Image endTurnImage;
+    public Sprite endTurnSprite;
+    public Sprite continueToAttacksSprite;
+
+
+
     public void Awake()
     {
         instance = this;
@@ -49,11 +56,11 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {   
-            player.DrawCard();
+            player.DrawCard(true);
         }
         for (int i = 0; i < 5; i++)
         {
-            ai.DrawCard();
+            ai.DrawCard(true);
         }
     }
 
@@ -177,6 +184,7 @@ public class GameManager : MonoBehaviour
             
             currentPhase = "Attack with Cards";
             endTurnDisplay.text = "END TURN";
+            endTurnImage.sprite = endTurnSprite;
             phaseDisplay.text = currentPhase;
             playerOfCard.PlayCard(cardDragged, targetSpace);
             if (currentPlayer == player)
@@ -340,6 +348,7 @@ public class GameManager : MonoBehaviour
                 actuatllyEnded = false;
                 currentPhase = "Attack with Cards";
                 endTurnDisplay.text = "END TURN";
+                endTurnImage.sprite = endTurnSprite;
             }
             else
             {
@@ -407,6 +416,7 @@ public class GameManager : MonoBehaviour
             {
                 endTurnButton.SetActive(true);
                 endTurnDisplay.text = "GO TO ATTACKS";
+                endTurnImage.sprite = continueToAttacksSprite;
                 phaseDisplay.text = currentPhase;
             }
             else
@@ -415,7 +425,7 @@ public class GameManager : MonoBehaviour
                 phaseDisplay.text = "Enemy Turn";
                 StartCoroutine(AITurn());
             }
-            currentPlayer.DrawCard();
+            currentPlayer.DrawCard(false);
         }
     }
 

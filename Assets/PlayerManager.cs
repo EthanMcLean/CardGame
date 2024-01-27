@@ -25,13 +25,13 @@ public class PlayerManager : MonoBehaviour
         cardsInDeck = new List<CardData>(deckData.GetComponentsInChildren<CardData>());
     }
 
-    public void DrawCard()
+    public void DrawCard(bool initialCard)
     {
         if (cardsInDeck.Count > 0)
         {
             CardData nextCard = cardsInDeck[0];
             cardsInDeck.RemoveAt(0);
-            CardAnimationHandler.instance.AddMoveCardAnimation(deckTrans, handTrans, this, "Hand", nextCard, false);
+            CardAnimationHandler.instance.AddMoveCardAnimation(deckTrans, handTrans, this, "Hand", nextCard, false, initialCard);
             cardsInHand.Add(nextCard);
         }
     }
@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
         {
             slot = spacePlayedOn.altPos;
         }
-        CardAnimationHandler.instance.AddMoveCardAnimation(handTrans, slot, this, "Field", cardPlayed.data, true);
+        CardAnimationHandler.instance.AddMoveCardAnimation(handTrans, slot, this, "Field", cardPlayed.data, true, false);
         cardsInHand.Remove(cardPlayed.data);
     }
 

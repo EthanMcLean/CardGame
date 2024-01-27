@@ -790,9 +790,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4be22871612a00047a9625c7abd103d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e3364b4aaffacf4d8c6111c4529bcf4, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2261,6 +2261,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1481742649}
+  - {fileID: 1052795057}
+  - {fileID: 1701220816}
+  - {fileID: 2001136653}
+  - {fileID: 1313509682}
   - {fileID: 1271460471}
   - {fileID: 724840098}
   - {fileID: 1854607546}
@@ -2598,6 +2602,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049108359}
   m_CullTransparentMesh: 1
+--- !u!1 &1052795056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052795057}
+  m_Layer: 5
+  m_Name: PlayerTalking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1052795057
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052795056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 942511437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -350.7, y: -2.437793}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1078676590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2832,6 +2871,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4429d3559938e444092f537b2ef484e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1313509681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313509682}
+  m_Layer: 5
+  m_Name: AiNotTalking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1313509682
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313509681}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 942511437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 443.00006, y: -2.437793}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1324301893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3589,6 +3663,9 @@ MonoBehaviour:
   aiFace: {fileID: 724840100}
   cardSelectedForCombat: {fileID: 0}
   victory: {fileID: 1049108359}
+  endTurnImage: {fileID: 302850305}
+  endTurnSprite: {fileID: 21300000, guid: 4be22871612a00047a9625c7abd103d9, type: 3}
+  continueToAttacksSprite: {fileID: 21300000, guid: 0e3364b4aaffacf4d8c6111c4529bcf4, type: 3}
 --- !u!4 &1489095170
 Transform:
   m_ObjectHideFlags: 0
@@ -3619,6 +3696,12 @@ MonoBehaviour:
   currentAnimations: []
   animating: 0
   voice: {fileID: 1489095172}
+  playerTalking: {fileID: 1052795057}
+  aiTalking: {fileID: 2001136653}
+  playerNotTalking: {fileID: 1701220816}
+  aiNotTalking: {fileID: 1313509682}
+  playerTalkingObject: {fileID: 1271460471}
+  aiTalkingObject: {fileID: 724840098}
 --- !u!82 &1489095172
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4213,6 +4296,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6494259075696924182, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
   m_PrefabInstance: {fileID: 1696483089}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1701220815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701220816}
+  m_Layer: 5
+  m_Name: PlayerNotTalking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1701220816
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701220815}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 942511437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -443.33273, y: -2.437793}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1743873656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5130,6 +5248,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6494259075696924182, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
   m_PrefabInstance: {fileID: 1979030924}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2001136652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001136653}
+  m_Layer: 5
+  m_Name: AITalking (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2001136653
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001136652}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 942511437}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 348.5, y: -2.437793}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2036517972 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3610221390448781284, guid: e80c4f9b8ac01174ca8767573ac43c71, type: 3}
