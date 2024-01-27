@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     public string currentPhase = "Play 1 Card";
     public TMPro.TextMeshProUGUI phaseDisplay;
     public GameObject endTurnButton;
+    public TMPro.TextMeshProUGUI endTurnDisplay;
+
+    public Card playerFace;
 
     public Card cardSelectedForCombat;
     public void Awake()
@@ -170,6 +173,7 @@ public class GameManager : MonoBehaviour
             }
             
             currentPhase = "Attack with Cards";
+            endTurnDisplay.text = "END TURN";
             phaseDisplay.text = currentPhase;
             playerOfCard.PlayCard(cardDragged, targetSpace);
             if (currentPlayer == player)
@@ -318,37 +322,48 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
+        bool actuatllyEnded = true;
         if (currentPlayer == player)
         {
-            foreach (Image img in smallSpaces)
+            if (currentPhase == "Play 1 Card")
             {
-                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
-                {
-                    card.attackedThisRound = false;
-                }
+                actuatllyEnded = false;
+                currentPhase = "Attack with Cards";
+                endTurnDisplay.text = "END TURN";
             }
-            foreach (Image img in midSpaces)
+            else
             {
-                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+
+                foreach (Image img in smallSpaces)
                 {
-                    card.attackedThisRound = false;
+                    foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                    {
+                        card.attackedThisRound = false;
+                    }
                 }
-            }
-            foreach (Image img in bigSpaces)
-            {
-                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                foreach (Image img in midSpaces)
                 {
-                    card.attackedThisRound = false;
+                    foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                    {
+                        card.attackedThisRound = false;
+                    }
                 }
-            }
+                foreach (Image img in bigSpaces)
+                {
+                    foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                    {
+                        card.attackedThisRound = false;
+                    }
+                }
 
 
-            if (cardSelectedForCombat != null)
-            {
-                cardSelectedForCombat.GetComponent<Outline>().enabled = false;
+                if (cardSelectedForCombat != null)
+                {
+                    cardSelectedForCombat.GetComponent<Outline>().enabled = false;
+                }
+                cardSelectedForCombat = null;
+                currentPlayer = ai;
             }
-            cardSelectedForCombat = null;
-           currentPlayer = ai;
         }
         else
         {
@@ -375,19 +390,23 @@ public class GameManager : MonoBehaviour
             }
             currentPlayer = player;
         }
-        currentPhase = "Play 1 Card";
-        if (currentPlayer == player)
+        if (actuatllyEnded)
         {
-            endTurnButton.SetActive(true);
-            phaseDisplay.text = currentPhase;
+            currentPhase = "Play 1 Card";
+            if (currentPlayer == player)
+            {
+                endTurnButton.SetActive(true);
+                endTurnDisplay.text = "GO TO ATTACKS";
+                phaseDisplay.text = currentPhase;
+            }
+            else
+            {
+                endTurnButton.SetActive(false);
+                phaseDisplay.text = "Enemy Turn";
+                StartCoroutine(AITurn());
+            }
+            currentPlayer.DrawCard();
         }
-        else
-        {
-            endTurnButton.SetActive(false);
-            phaseDisplay.text = "Enemy Turn";
-            StartCoroutine(AITurn());
-        }
-        currentPlayer.DrawCard();
     }
 
     IEnumerator AITurn()
@@ -484,21 +503,30 @@ public class GameManager : MonoBehaviour
             enemyCardsInPlay.AddRange(img.transform.GetComponentsInChildren<Card>());
 
         }
+
+        enemyCardsInPlay.Add(playerFace);
+
         foreach (Card card in cardsInPlay)
         {
             bool attacked = false;
             foreach (Card enemyCard in enemyCardsInPlay)
             {
-                if (TryToAttack(card, enemyCard))
+                if (enemyCard != null)
                 {
-                    attacked = true;
-                    break;
+
+
+                    if (TryToAttack(card, enemyCard))
+                    {
+                        while (CardAnimationHandler.instance.animating)
+                        {
+                            yield return null;
+                        }
+                        attacked = true;
+                        break;
+                    }
                 }
             }
-            if (attacked)
-            {
-                break;
-            }
+            
         }
         while (CardAnimationHandler.instance.animating)
         {
