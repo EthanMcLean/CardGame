@@ -411,6 +411,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator AITurn()
     {
+        while (CardAnimationHandler.instance.animating)
+        {
+            yield return null;
+        }
         yield return new WaitForSeconds(0.5f);
         Card[] cardsInHand = ai.handTrans.GetComponentsInChildren<Card>();
         bool playedCard = false;

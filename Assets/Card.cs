@@ -24,6 +24,8 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
     public int currentDamage;
 
     public bool isFace;
+    public GameObject onePower;
+    public GameObject twoPower;
 
     public void CleanUpAfterMove()
     {
@@ -36,6 +38,14 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
     {
         attack.text = data.attack.ToString();
         defence.text = data.health.ToString();
+        if (data.size == 2)
+        {
+            onePower.SetActive(true);
+        }
+        else if (data.size == 3)
+        {
+            twoPower.SetActive(true);
+        }
     }
     public void SetDamage(int newDam)
     {
