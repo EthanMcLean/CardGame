@@ -13,6 +13,13 @@ public class PlayerManager : MonoBehaviour
     public List<CardData> cardsInHand = new List<CardData>();
 
 
+    public Transform deckData;
+
+    public void Awake()
+    {
+        cardsInDeck = new List<CardData>(deckData.GetComponentsInChildren<CardData>());
+    }
+
     public void DrawCard()
     {
         if (cardsInDeck.Count > 0)

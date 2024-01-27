@@ -22,6 +22,8 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
 
     public int currentDamage;
 
+    public bool isFace;
+
     public void CleanUpAfterMove()
     {
         GetComponent<Image>().raycastTarget = true;
@@ -37,8 +39,18 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
     public void SetDamage(int newDam)
     {
         currentDamage += newDam;
-        damage.text = currentDamage.ToString();
-        damage.transform.parent.gameObject.SetActive(true);
+        if (isFace)
+        {
+            damage.text = (data.health - currentDamage).ToString();
+        }
+        else
+        {
+            damage.text = currentDamage.ToString();
+        }
+        if (currentDamage > 0)
+        {
+            damage.transform.parent.gameObject.SetActive(true);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

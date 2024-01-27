@@ -241,24 +241,29 @@ public class GameManager : MonoBehaviour
 
     public void TryToSelectCardForAttack(Card cardSelected)
     {
-        if (currentPhase == "Attack with Cards" && currentPlayer == player && cardSelected.zoneIn == "Field" && cardSelected.owner == player)
+        if (!cardSelected.isFace)
         {
-            if (!cardSelected.attackedThisRound)
+            if (currentPhase == "Attack with Cards" && currentPlayer == player && cardSelected.zoneIn == "Field" && cardSelected.owner == player)
             {
-                if (cardSelectedForCombat != null)
+                if (!cardSelected.attackedThisRound)
                 {
-                    cardSelectedForCombat.GetComponent<Outline>().enabled = false;
+                    if (cardSelectedForCombat != null)
+                    {
+                        cardSelectedForCombat.GetComponent<Outline>().enabled = false;
+                    }
+                    cardSelectedForCombat = cardSelected;
+                    cardSelected.GetComponent<Outline>().enabled = true;
                 }
-                cardSelectedForCombat = cardSelected;
-                cardSelected.GetComponent<Outline>().enabled = true;
             }
         }
     }
 
     public void TryToAttack(Card cardSelected)
     {
+        Debug.Log("AttackFace1");
         if (currentPhase == "Attack with Cards" && currentPlayer == player && cardSelected.zoneIn == "Field" && cardSelected.owner == ai)
         {
+            Debug.Log("AttackFace2");
             if (cardSelectedForCombat != null)
             {
                 TryToAttack(cardSelectedForCombat, cardSelected);
@@ -278,6 +283,10 @@ public class GameManager : MonoBehaviour
     public void DestoryCardInCombat(Card destroyedCard)
     {
         GridSpace space = destroyedCard.transform.parent.GetComponent<GridSpace>();
+        if (space == null)
+        {
+            space = destroyedCard.transform.parent.parent.GetComponent<GridSpace>();
+        }
         space.full = false;
         foreach (GridSpace subSapces in space.subGridSpace)
         {
