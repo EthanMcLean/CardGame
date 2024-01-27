@@ -88,3 +88,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 865748a4f5c1f7845849f37c05032cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destinationTrans: {fileID: 0}
+  emptySpace: {fileID: 0}
+  owner: {fileID: 0}
+  zoneIn: 
+  data: {fileID: 0}
+  cardDisplay: {fileID: 7339571179513726590}
+  cardBack: {fileID: 21300000, guid: 893e2077fb3e7f346a6badf867ecc736, type: 3}

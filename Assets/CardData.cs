@@ -5,6 +5,5 @@ using UnityEngine;
 public class CardData : MonoBehaviour
 {
     public int size;
-
-    
+    public Sprite cardSprite;
 }

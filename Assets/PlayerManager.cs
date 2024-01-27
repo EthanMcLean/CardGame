@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class PlayerManager : MonoBehaviour
 
     public List<CardData> cardsInDeck = new List<CardData>();
 
+    public List<CardData> cardsInHand = new List<CardData>();
+
+
     public void DrawCard()
     {
         if (cardsInDeck.Count > 0)
@@ -16,6 +20,7 @@ public class PlayerManager : MonoBehaviour
             CardData nextCard = cardsInDeck[0];
             cardsInDeck.RemoveAt(0);
             CardAnimationHandler.instance.AddMoveCardAnimation(deckTrans, handTrans, this, "Hand", nextCard);
+            cardsInHand.Add(nextCard);
         }
     }
 
@@ -28,5 +33,11 @@ public class PlayerManager : MonoBehaviour
             slot = spacePlayedOn.altPos;
         }
         CardAnimationHandler.instance.AddMoveCardAnimation(handTrans, slot, this, "Field", cardPlayed.data);
+        cardsInHand.Remove(cardPlayed.data);
+    }
+
+    public void EndTurn()
+    {
+        GameManager.instance.EndTurn();
     }
 }

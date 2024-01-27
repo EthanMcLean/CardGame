@@ -607,6 +607,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 4085893766350528813}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[2]
+      value: 
+      objectReference: {fileID: 7484103262135841323}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -720,6 +736,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 4524011744218953822}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -833,6 +861,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 7484103262135841323}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[2]
+      value: 
+      objectReference: {fileID: 1301197297053616298}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -944,11 +988,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 864469043405750288, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Name
-      value: GridSpace (1)
+      value: DownLeft
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.data[0]
@@ -966,6 +1014,10 @@ PrefabInstance:
       propertyPath: subGridSpace.Array.data[3]
       value: 
       objectReference: {fileID: 4985803600673281923}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1060,6 +1112,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
   m_PrefabInstance: {fileID: 3469400622010775736}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7484103262135841323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+  m_PrefabInstance: {fileID: 3469400622010775736}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb08f101b6d0e04693ae652d146ccc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4147958007255690878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1072,6 +1135,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 4085893766350528813}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1183,11 +1258,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 864469043405750288, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Name
-      value: GridSpace (3)
+      value: DownRight
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.data[0]
@@ -1205,6 +1284,10 @@ PrefabInstance:
       propertyPath: subGridSpace.Array.data[3]
       value: 
       objectReference: {fileID: 271171069800273744}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1294,6 +1377,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+--- !u!114 &1301197297053616298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+  m_PrefabInstance: {fileID: 5041745923099460153}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb08f101b6d0e04693ae652d146ccc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3908985943387556132 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
@@ -1311,6 +1405,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 4085893766350528813}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[2]
+      value: 
+      objectReference: {fileID: 4524011744218953822}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1424,6 +1534,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 1301197297053616298}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1537,6 +1659,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 4524011744218953822}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[2]
+      value: 
+      objectReference: {fileID: 1301197297053616298}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1650,6 +1788,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 4085893766350528813}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[2]
+      value: 
+      objectReference: {fileID: 7484103262135841323}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[3]
+      value: 
+      objectReference: {fileID: 4524011744218953822}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[4]
+      value: 
+      objectReference: {fileID: 1301197297053616298}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1761,11 +1923,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 864469043405750288, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Name
-      value: GridSpace (2)
+      value: UpRight
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.data[0]
@@ -1783,6 +1949,10 @@ PrefabInstance:
       propertyPath: subGridSpace.Array.data[3]
       value: 
       objectReference: {fileID: 590708217539540193}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1877,6 +2047,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
   m_PrefabInstance: {fileID: 7580030473613079245}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4524011744218953822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+  m_PrefabInstance: {fileID: 7580030473613079245}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb08f101b6d0e04693ae652d146ccc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8020114356794829758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1887,11 +2068,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 864469043405750288, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Name
-      value: GridSpace
+      value: UpLeft
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: subGridSpace.Array.data[0]
@@ -1909,6 +2094,10 @@ PrefabInstance:
       propertyPath: subGridSpace.Array.data[3]
       value: 
       objectReference: {fileID: 3558076407934791477}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2003,6 +2192,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
   m_PrefabInstance: {fileID: 8020114356794829758}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4085893766350528813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+  m_PrefabInstance: {fileID: 8020114356794829758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb08f101b6d0e04693ae652d146ccc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8428929963365953443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2149,6 +2349,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
   m_PrefabInstance: {fileID: 8428929963365953443}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2522220424852972848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+  m_PrefabInstance: {fileID: 8428929963365953443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb08f101b6d0e04693ae652d146ccc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9108431240393716184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2161,6 +2372,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridSpace (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[0]
+      value: 
+      objectReference: {fileID: 2522220424852972848}
+    - target: {fileID: 6339143272531380883, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
+      propertyPath: parentGridSpace.Array.data[1]
+      value: 
+      objectReference: {fileID: 7484103262135841323}
     - target: {fileID: 8343027390355753757, guid: 3dab5f0b1b4f4844baa54a7a6b85af2a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

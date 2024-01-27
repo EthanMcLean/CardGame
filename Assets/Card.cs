@@ -11,6 +11,9 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public PlayerManager owner;
     public string zoneIn;
     public CardData data;
+    public Image cardDisplay;
+    public Sprite cardBack;
+
     public void CleanUpAfterMove()
     {
         GetComponent<Image>().raycastTarget = true;

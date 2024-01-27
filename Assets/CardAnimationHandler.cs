@@ -25,8 +25,22 @@ public class CardAnimationHandler : MonoBehaviour
         newAnim.cardToMove = Instantiate(GameManager.instance.cardPrefab, fromTrans);
         newAnim.cardToMove.GetComponent<RectTransform>().sizeDelta *= data.size;
         newAnim.cardToMove.SetActive(false);
-        newAnim.cardToMove.GetComponent<Card>().zoneIn = newZone;
-        newAnim.cardToMove.GetComponent<Card>().data = data;
+
+
+
+        Card newCard = newAnim.cardToMove.GetComponent<Card>();
+        if (owner == GameManager.instance.ai && newZone == "Hand")
+        {
+            
+            newCard.cardDisplay.sprite = newCard.cardBack;
+        }
+        else
+        {
+            newCard.cardDisplay.sprite = data.cardSprite;
+        }
+
+        newCard.zoneIn = newZone;
+        newCard.data = data;
         newAnim.owner = owner;
         currentAnimations.Add(newAnim);
         TryToTriggerNextAnimation();

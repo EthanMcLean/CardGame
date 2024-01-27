@@ -10,6 +10,7 @@ public class GridSpace : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public bool full;
     public List<GridSpace> subGridSpace = new List<GridSpace>();
     public Transform altPos;
+    public List<GridSpace> parentGridSpace = new List<GridSpace>();
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (owner == "Player")
