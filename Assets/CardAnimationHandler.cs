@@ -16,13 +16,17 @@ public class CardAnimationHandler : MonoBehaviour
         instance = this; 
     }
 
-    public void AddMoveCardAnimation(Transform fromTrans, Transform toTrans, PlayerManager owner)
+    public void AddMoveCardAnimation(Transform fromTrans, Transform toTrans, PlayerManager owner, string newZone, CardData data)
     {
         CardMovementAnimation newAnim = new CardMovementAnimation();
         GameObject cardSpace = Instantiate(GameManager.instance.cardSpacePrefab, toTrans);
+        cardSpace.GetComponent<RectTransform>().sizeDelta *= data.size;
         newAnim.cardSpace = cardSpace;
         newAnim.cardToMove = Instantiate(GameManager.instance.cardPrefab, fromTrans);
+        newAnim.cardToMove.GetComponent<RectTransform>().sizeDelta *= data.size;
         newAnim.cardToMove.SetActive(false);
+        newAnim.cardToMove.GetComponent<Card>().zoneIn = newZone;
+        newAnim.cardToMove.GetComponent<Card>().data = data;
         newAnim.owner = owner;
         currentAnimations.Add(newAnim);
         TryToTriggerNextAnimation();
@@ -73,7 +77,7 @@ public class CardMovementAnimation: GameAnimation
         card.owner = owner;
         cardToMove.SetActive(true);
         Vector3 startPoint = cardToMove.transform.position;
-        while (cardToMove.transform.position != cardSpace.transform.position)
+        while (Vector3.Distance(cardToMove.transform.position, cardSpace.transform.position) > 0.1f)
         {
             lerp += Time.deltaTime * speed;
             cardToMove.transform.position = Vector3.Lerp(
