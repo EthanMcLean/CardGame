@@ -15,6 +15,11 @@ public class PlayerManager : MonoBehaviour
 
     public Transform deckData;
 
+    public AudioClip summonClip;
+    public AudioClip drawClip;
+    public AudioClip attackClip;
+    public AudioClip negativeReaction;
+
     public void Awake()
     {
         cardsInDeck = new List<CardData>(deckData.GetComponentsInChildren<CardData>());
@@ -26,7 +31,7 @@ public class PlayerManager : MonoBehaviour
         {
             CardData nextCard = cardsInDeck[0];
             cardsInDeck.RemoveAt(0);
-            CardAnimationHandler.instance.AddMoveCardAnimation(deckTrans, handTrans, this, "Hand", nextCard);
+            CardAnimationHandler.instance.AddMoveCardAnimation(deckTrans, handTrans, this, "Hand", nextCard, false);
             cardsInHand.Add(nextCard);
         }
     }
@@ -39,7 +44,7 @@ public class PlayerManager : MonoBehaviour
         {
             slot = spacePlayedOn.altPos;
         }
-        CardAnimationHandler.instance.AddMoveCardAnimation(handTrans, slot, this, "Field", cardPlayed.data);
+        CardAnimationHandler.instance.AddMoveCardAnimation(handTrans, slot, this, "Field", cardPlayed.data, true);
         cardsInHand.Remove(cardPlayed.data);
     }
 

@@ -322,9 +322,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: b426cb4157616fd459ddf8a30929938a, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -369,6 +377,10 @@ MonoBehaviour:
   cardsInDeck: []
   cardsInHand: []
   deckData: {fileID: 1455271096}
+  summonClip: {fileID: 8300000, guid: b0138228b7312e84b97753676d47263c, type: 3}
+  drawClip: {fileID: 8300000, guid: 8fc9293f1405c7d4ab07e0b94241032c, type: 3}
+  attackClip: {fileID: 8300000, guid: 933dae36efa06cd48baac983b2a9351e, type: 3}
+  negativeReaction: {fileID: 8300000, guid: de3574be9b223ca4da0f52f01c8c9538, type: 3}
 --- !u!4 &58062506
 Transform:
   m_ObjectHideFlags: 0
@@ -449,9 +461,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 0c74bb14d70af844a9aadd1f85d5b17a, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -565,9 +585,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: c8e6e7ea60506bc4aa2b7176d3b76c3b, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -879,9 +907,17 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 49f15e0f98390cd439026718f9d035a4, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -970,6 +1006,10 @@ MonoBehaviour:
   cardsInDeck: []
   cardsInHand: []
   deckData: {fileID: 763020359}
+  summonClip: {fileID: 8300000, guid: b0138228b7312e84b97753676d47263c, type: 3}
+  drawClip: {fileID: 8300000, guid: 8fc9293f1405c7d4ab07e0b94241032c, type: 3}
+  attackClip: {fileID: 8300000, guid: 933dae36efa06cd48baac983b2a9351e, type: 3}
+  negativeReaction: {fileID: 8300000, guid: de3574be9b223ca4da0f52f01c8c9538, type: 3}
 --- !u!4 &533954953
 Transform:
   m_ObjectHideFlags: 0
@@ -1050,9 +1090,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: c8e6e7ea60506bc4aa2b7176d3b76c3b, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1097,7 +1145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 492, y: 303}
+  m_AnchoredPosition: {x: 492, y: 232}
   m_SizeDelta: {x: 66.99, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574125229
@@ -1120,7 +1168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 893e2077fb3e7f346a6badf867ecc736, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5fc7116066f9264884c5de8e80383a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1203,9 +1251,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 1596e78288a6e7d46aa23fdd28ef29f8, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1281,9 +1337,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c6d85c0bd0a777543984f623a837cfbe, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4ffad68ae05aa804982694cca1065402, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c6d85c0bd0a777543984f623a837cfbe, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1591,6 +1655,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &796889285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796889286}
+  - component: {fileID: 796889287}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796889286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796889285}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1017.73584, y: 511.0791, z: 5.5289454}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796889287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796889285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fc678afe184194499b7ba2426dcae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &801289047 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2055128753889501347, guid: e80c4f9b8ac01174ca8767573ac43c71, type: 3}
@@ -1895,9 +2003,17 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 26a327030ae12d44094d4a61366aec74, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2065,9 +2181,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4d3438a907f4227458931cf78322f566, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2129,6 +2253,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5978810958691033265, guid: 39dcc84002746214d8ddfbf6eed908a9, type: 3}
   m_PrefabInstance: {fileID: 6408572293720750058}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1271460475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6526234148634870220, guid: 39dcc84002746214d8ddfbf6eed908a9, type: 3}
+  m_PrefabInstance: {fileID: 6408572293720750058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4429d3559938e444092f537b2ef484e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1330179801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2194,9 +2329,17 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3d2f1b2d48ec8c544b916fdf384c214b, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2272,9 +2415,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: a9613c8021d117341b0f127ffecae801, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2350,9 +2501,17 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4c413e916e70186428fca48d1cf216cc, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2392,12 +2551,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 690025001}
   - {fileID: 7001805398320331345}
   - {fileID: 125930558}
   - {fileID: 689867397}
   - {fileID: 1078676591}
   - {fileID: 1330573717}
-  - {fileID: 690025001}
   - {fileID: 2089067446}
   - {fileID: 402945749}
   - {fileID: 1979030925}
@@ -2610,6 +2769,7 @@ GameObject:
   - component: {fileID: 1489095170}
   - component: {fileID: 1489095169}
   - component: {fileID: 1489095171}
+  - component: {fileID: 1489095172}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2675,6 +2835,7 @@ MonoBehaviour:
   phaseDisplay: {fileID: 41173349}
   endTurnButton: {fileID: 302850303}
   endTurnDisplay: {fileID: 751896323}
+  playerFace: {fileID: 1271460475}
   cardSelectedForCombat: {fileID: 0}
 --- !u!4 &1489095170
 Transform:
@@ -2705,6 +2866,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAnimations: []
   animating: 0
+  voice: {fileID: 1489095172}
+--- !u!82 &1489095172
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489095168}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1532934610 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3168026995279182409, guid: e80c4f9b8ac01174ca8767573ac43c71, type: 3}
@@ -2893,9 +3151,17 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 49f15e0f98390cd439026718f9d035a4, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2971,9 +3237,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: a9613c8021d117341b0f127ffecae801, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3056,7 +3330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -491, y: -292}
+  m_AnchoredPosition: {x: -491, y: -235}
   m_SizeDelta: {x: 66.99, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614248727
@@ -3079,7 +3353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 893e2077fb3e7f346a6badf867ecc736, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5fc7116066f9264884c5de8e80383a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3327,9 +3601,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4d3438a907f4227458931cf78322f566, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3954,9 +4236,17 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4c413e916e70186428fca48d1cf216cc, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4043,9 +4333,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 1596e78288a6e7d46aa23fdd28ef29f8, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4121,9 +4419,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 4ffad68ae05aa804982694cca1065402, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4309,9 +4615,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 0c74bb14d70af844a9aadd1f85d5b17a, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4398,9 +4712,17 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 26a327030ae12d44094d4a61366aec74, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4476,9 +4798,17 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: 3d2f1b2d48ec8c544b916fdf384c214b, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4694,9 +5024,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: aiNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
       propertyPath: cardSprite
       value: 
       objectReference: {fileID: 21300000, guid: b426cb4157616fd459ddf8a30929938a, type: 3}
+    - target: {fileID: 6559956924335078025, guid: ade05ce4f8cf8ac43ae669abd7f277da, type: 3}
+      propertyPath: playerNameClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4beb9bace820fe14f87ce0fa1125dc8d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5453,3 +5791,4 @@ SceneRoots:
   - {fileID: 533954953}
   - {fileID: 1455271096}
   - {fileID: 763020359}
+  - {fileID: 796889286}

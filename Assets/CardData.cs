@@ -8,4 +8,7 @@ public class CardData : MonoBehaviour
     public Sprite cardSprite;
     public int attack;
     public int health;
+
+    public AudioClip playerNameClip;
+    public AudioClip aiNameClip;
 }

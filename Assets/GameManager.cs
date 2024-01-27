@@ -470,7 +470,10 @@ public class GameManager : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0.5f);
-
+        while (CardAnimationHandler.instance.animating)
+        {
+            yield return null;
+        }
         List<Card> cardsInPlay = new List<Card>();
         foreach (Image img in AIsmallSpaces)
         {
@@ -508,20 +511,16 @@ public class GameManager : MonoBehaviour
 
         foreach (Card card in cardsInPlay)
         {
-            bool attacked = false;
             foreach (Card enemyCard in enemyCardsInPlay)
             {
+                while (CardAnimationHandler.instance.animating)
+                {
+                    yield return null;
+                }
                 if (enemyCard != null)
                 {
-
-
                     if (TryToAttack(card, enemyCard))
                     {
-                        while (CardAnimationHandler.instance.animating)
-                        {
-                            yield return null;
-                        }
-                        attacked = true;
                         break;
                     }
                 }

@@ -177,7 +177,7 @@ MonoBehaviour:
   data: {fileID: 0}
   cardDisplay: {fileID: 7339571179513726590}
   cardArtDisplay: {fileID: 1983411516301600005}
-  cardBack: {fileID: 21300000, guid: 893e2077fb3e7f346a6badf867ecc736, type: 3}
+  cardBack: {fileID: 21300000, guid: d5fc7116066f9264884c5de8e80383a3, type: 3}
   attackedThisRound: 0
   hit: {fileID: 6803260702309183337}
   attack: {fileID: 5923060466843416670}

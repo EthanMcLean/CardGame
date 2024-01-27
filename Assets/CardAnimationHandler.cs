@@ -11,11 +11,14 @@ public class CardAnimationHandler : MonoBehaviour
     public bool animating;
 
     public static CardAnimationHandler instance;
+
+    public AudioSource voice;
+
     public void Awake()
     {
         instance = this; 
     }
-
+    
     public void AddAttackCardAnimation(Card cardAttacking, Card cardDefending)
     {
         CardAttackAnimation newAnim = new CardAttackAnimation();
@@ -28,7 +31,7 @@ public class CardAnimationHandler : MonoBehaviour
     }
 
 
-    public void AddMoveCardAnimation(Transform fromTrans, Transform toTrans, PlayerManager owner, string newZone, CardData data)
+    public void AddMoveCardAnimation(Transform fromTrans, Transform toTrans, PlayerManager owner, string newZone, CardData data, bool PlayCard)
     {
         CardMovementAnimation newAnim = new CardMovementAnimation();
         GameObject cardSpace = Instantiate(GameManager.instance.cardSpacePrefab, toTrans);
@@ -37,8 +40,7 @@ public class CardAnimationHandler : MonoBehaviour
         newAnim.cardToMove = Instantiate(GameManager.instance.cardPrefab, fromTrans);
         newAnim.cardToMove.GetComponent<RectTransform>().sizeDelta *= data.size;
         newAnim.cardToMove.SetActive(false);
-
-
+        newAnim.playCard = PlayCard;
 
         Card newCard = newAnim.cardToMove.GetComponent<Card>();
         if (owner == GameManager.instance.ai && newZone == "Hand")
@@ -102,9 +104,40 @@ public class CardMovementAnimation: GameAnimation
     public GameObject cardSpace;
     public float speed = 10f;
     public float lerp;
+    public bool playCard;
     public override IEnumerator AnimationCoroutine()
     {
         card = cardToMove.GetComponent<Card>();
+        if (playCard)
+        {
+            CardAnimationHandler.instance.voice.clip = owner.summonClip;
+            CardAnimationHandler.instance.voice.Play();
+        }
+        else
+        {
+            CardAnimationHandler.instance.voice.clip = owner.drawClip;
+            //CardAnimationHandler.instance.voice.Play();
+        }
+        while (CardAnimationHandler.instance.voice.isPlaying)
+        {
+            yield return null;
+        }
+        if (playCard)
+        {
+            if(owner == GameManager.instance.player)
+            {
+                CardAnimationHandler.instance.voice.clip = card.data.playerNameClip;
+            }
+            else
+            {
+                CardAnimationHandler.instance.voice.clip = card.data.aiNameClip;
+            }
+           
+            CardAnimationHandler.instance.voice.Play();
+        }
+      
+
+        
         card.emptySpace = cardSpace;
         card.destinationTrans = cardSpace.transform.parent;
         card.owner = owner;
@@ -120,6 +153,10 @@ public class CardMovementAnimation: GameAnimation
             yield return null;
         }
         card.CleanUpAfterMove();
+        while (CardAnimationHandler.instance.voice.isPlaying)
+        {
+            yield return null;
+        }
         CardAnimationHandler.instance.FinishAnimation();
         CardAnimationHandler.instance.TryToTriggerNextAnimation();
     }
@@ -134,6 +171,26 @@ public class CardAttackAnimation : GameAnimation
 
     public override IEnumerator AnimationCoroutine()
     {
+
+        CardAnimationHandler.instance.voice.clip = attacker.owner.attackClip;
+        CardAnimationHandler.instance.voice.Play();
+    
+        while (CardAnimationHandler.instance.voice.isPlaying)
+        {
+            yield return null;
+        }
+
+        if (attacker.owner == GameManager.instance.player)
+        {
+            CardAnimationHandler.instance.voice.clip = attacker.data.playerNameClip;
+        }
+        else
+        {
+            CardAnimationHandler.instance.voice.clip = attacker.data.aiNameClip;
+        }
+        CardAnimationHandler.instance.voice.Play();
+     
+
         float movementtoHitTimer = 0;
         Vector3 startPoint = attacker.transform.position;
         while (Vector3.Distance(attacker.transform.position,defender.transform.position) > 100)
@@ -165,9 +222,24 @@ public class CardAttackAnimation : GameAnimation
         attacker.hit.SetActive(false);
         yield return new WaitForSeconds(0.5f);
 
+        while (CardAnimationHandler.instance.voice.isPlaying)
+        {
+            yield return null;
+        }
+
         if (defender.currentDamage >= defender.data.health)
         {
+            CardAnimationHandler.instance.voice.clip = defender.owner.negativeReaction;
+            CardAnimationHandler.instance.voice.Play();
+
+            while (CardAnimationHandler.instance.voice.isPlaying)
+            {
+                yield return null;
+            }
+
             GameManager.instance.DestoryCardInCombat(defender);
+
+
         }
         if (attacker.currentDamage >= attacker.data.health)
         {
