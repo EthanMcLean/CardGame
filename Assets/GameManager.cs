@@ -35,8 +35,11 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI endTurnDisplay;
 
     public Card playerFace;
+    public Card aiFace;
 
     public Card cardSelectedForCombat;
+
+    public GameObject victory;
     public void Awake()
     {
         instance = this;
@@ -286,17 +289,24 @@ public class GameManager : MonoBehaviour
     }
     public void DestoryCardInCombat(Card destroyedCard)
     {
-        GridSpace space = destroyedCard.transform.parent.GetComponent<GridSpace>();
-        if (space == null)
+        if (destroyedCard == aiFace)
         {
-            space = destroyedCard.transform.parent.parent.GetComponent<GridSpace>();
+            victory.SetActive(true);
         }
-        space.full = false;
-        foreach (GridSpace subSapces in space.subGridSpace)
+        else
         {
-            subSapces.full = false;
+            GridSpace space = destroyedCard.transform.parent.GetComponent<GridSpace>();
+            if (space == null)
+            {
+                space = destroyedCard.transform.parent.parent.GetComponent<GridSpace>();
+            }
+            space.full = false;
+            foreach (GridSpace subSapces in space.subGridSpace)
+            {
+                subSapces.full = false;
+            }
+            Destroy(destroyedCard.gameObject);
         }
-        Destroy(destroyedCard.gameObject);
     }
 
 
