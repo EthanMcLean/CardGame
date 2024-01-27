@@ -16,6 +16,18 @@ public class CardAnimationHandler : MonoBehaviour
         instance = this; 
     }
 
+    public void AddAttackCardAnimation(Card cardAttacking, Card cardDefending)
+    {
+        CardAttackAnimation newAnim = new CardAttackAnimation();
+
+        newAnim.attacker = cardAttacking;
+        newAnim.defender = cardDefending;
+
+        currentAnimations.Add(newAnim);
+        TryToTriggerNextAnimation();
+    }
+
+
     public void AddMoveCardAnimation(Transform fromTrans, Transform toTrans, PlayerManager owner, string newZone, CardData data)
     {
         CardMovementAnimation newAnim = new CardMovementAnimation();
@@ -31,7 +43,6 @@ public class CardAnimationHandler : MonoBehaviour
         Card newCard = newAnim.cardToMove.GetComponent<Card>();
         if (owner == GameManager.instance.ai && newZone == "Hand")
         {
-            
             newCard.cardDisplay.sprite = newCard.cardBack;
         }
         else
@@ -101,6 +112,23 @@ public class CardMovementAnimation: GameAnimation
             yield return null;
         }
         card.CleanUpAfterMove();
+        CardAnimationHandler.instance.FinishAnimation();
+        CardAnimationHandler.instance.TryToTriggerNextAnimation();
+    }
+}
+
+[System.Serializable]
+public class CardAttackAnimation : GameAnimation
+{
+    
+    public Card attacker;
+    public Card defender;
+
+    public override IEnumerator AnimationCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        GameManager.instance.DestoryCardInCombat(defender);
         CardAnimationHandler.instance.FinishAnimation();
         CardAnimationHandler.instance.TryToTriggerNextAnimation();
     }

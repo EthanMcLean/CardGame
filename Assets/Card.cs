@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
 {
     public Transform destinationTrans;
     public GameObject emptySpace;
@@ -13,6 +13,7 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public CardData data;
     public Image cardDisplay;
     public Sprite cardBack;
+    public bool attackedThisRound;
 
     public void CleanUpAfterMove()
     {
@@ -32,5 +33,11 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         GameManager.instance.DragEnd(this);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        GameManager.instance.TryToSelectCardForAttack(this);
+        GameManager.instance.TryToAttack(this);
     }
 }

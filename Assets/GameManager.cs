@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     public PlayerManager player;
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
     public string currentPhase = "Play 1 Card";
     public TMPro.TextMeshProUGUI phaseDisplay;
     public GameObject endTurnButton;
+
+    public Card cardSelectedForCombat;
     public void Awake()
     {
         instance = this;
@@ -55,14 +58,26 @@ public class GameManager : MonoBehaviour
             foreach (Image img in smallSpaces)
             {
                 img.raycastTarget = cardDragged.data.size == 1;
+                foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                {
+                    cardImg.raycastTarget = cardDragged.data.size == 1;
+                }
             }
             foreach (Image img in midSpaces)
             {
                 img.raycastTarget = cardDragged.data.size == 2;
+                foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                {
+                    cardImg.raycastTarget = cardDragged.data.size == 2;
+                }
             }
             foreach (Image img in bigSpaces)
             {
                 img.raycastTarget = cardDragged.data.size == 3;
+                foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                {
+                    cardImg.raycastTarget = cardDragged.data.size == 3;
+                }
             }
 
             cardDragged.GetComponent<UnityEngine.UI.Image>().raycastTarget = false;
@@ -157,11 +172,120 @@ public class GameManager : MonoBehaviour
             currentPhase = "Attack with Cards";
             phaseDisplay.text = currentPhase;
             playerOfCard.PlayCard(cardDragged, targetSpace);
+            if (currentPlayer == player)
+            {
+                //Debug.Log("Should be working");
+                foreach (Image img in smallSpaces)
+                {
+                    
+                    foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                    {
+                        cardImg.raycastTarget = true;
+                    }
+                    img.raycastTarget = false;
+                    
+                }
+                foreach (Image img in midSpaces)
+                {
+                    
+                    foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                    {
+                        cardImg.raycastTarget = true;
+                    }
+                    img.raycastTarget = false;
+                }
+                foreach (Image img in bigSpaces)
+                {
+                    
+                    foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                    {
+                        cardImg.raycastTarget = true;
+                    }
+                    img.raycastTarget = false;
+                }
+
+
+                foreach (Image img in AIsmallSpaces)
+                {
+
+                    foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                    {
+                        cardImg.raycastTarget = true;
+                    }
+                    img.raycastTarget = false;
+
+                }
+                foreach (Image img in AImidSpaces)
+                {
+
+                    foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                    {
+                        cardImg.raycastTarget = true;
+                    }
+                    img.raycastTarget = false;
+                }
+                foreach (Image img in AIbigSpaces)
+                {
+
+                    foreach (Image cardImg in img.transform.GetComponentsInChildren<Image>())
+                    {
+                        cardImg.raycastTarget = true;
+                    }
+                    img.raycastTarget = false;
+                }
+            }
             return true;
         }
         return false;
     }
-    
+
+    public void TryToSelectCardForAttack(Card cardSelected)
+    {
+        if (currentPhase == "Attack with Cards" && currentPlayer == player && cardSelected.zoneIn == "Field" && cardSelected.owner == player)
+        {
+            if (!cardSelected.attackedThisRound)
+            {
+                if (cardSelectedForCombat != null)
+                {
+                    cardSelectedForCombat.GetComponent<Outline>().enabled = false;
+                }
+                cardSelectedForCombat = cardSelected;
+                cardSelected.GetComponent<Outline>().enabled = true;
+            }
+        }
+    }
+
+    public void TryToAttack(Card cardSelected)
+    {
+        if (currentPhase == "Attack with Cards" && currentPlayer == player && cardSelected.zoneIn == "Field" && cardSelected.owner == ai)
+        {
+            if (cardSelectedForCombat != null)
+            {
+                TryToAttack(cardSelectedForCombat, cardSelected);
+            }
+        }
+    }
+    public bool TryToAttack(Card attacker, Card defender)
+    {
+        if (!attacker.attackedThisRound)
+        {
+            attacker.attackedThisRound = true;
+            CardAnimationHandler.instance.AddAttackCardAnimation(attacker,defender);
+            return true;
+        }
+        return false;
+    }
+    public void DestoryCardInCombat(Card destroyedCard)
+    {
+        GridSpace space = destroyedCard.transform.parent.GetComponent<GridSpace>();
+        space.full = false;
+        foreach (GridSpace subSapces in space.subGridSpace)
+        {
+            subSapces.full = false;
+        }
+        Destroy(destroyedCard.gameObject);
+    }
+
 
     public void UpdateCurrentGridSpace(GridSpace newSpace, bool add)
     {
@@ -187,10 +311,59 @@ public class GameManager : MonoBehaviour
     {
         if (currentPlayer == player)
         {
-            currentPlayer = ai;
+            foreach (Image img in smallSpaces)
+            {
+                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                {
+                    card.attackedThisRound = false;
+                }
+            }
+            foreach (Image img in midSpaces)
+            {
+                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                {
+                    card.attackedThisRound = false;
+                }
+            }
+            foreach (Image img in bigSpaces)
+            {
+                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                {
+                    card.attackedThisRound = false;
+                }
+            }
+
+
+            if (cardSelectedForCombat != null)
+            {
+                cardSelectedForCombat.GetComponent<Outline>().enabled = false;
+            }
+            cardSelectedForCombat = null;
+           currentPlayer = ai;
         }
         else
         {
+            foreach (Image img in AIsmallSpaces)
+            {
+                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                {
+                    card.attackedThisRound = false;
+                }
+            }
+            foreach (Image img in AImidSpaces)
+            {
+                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                {
+                    card.attackedThisRound = false;
+                }
+            }
+            foreach (Image img in AIbigSpaces)
+            {
+                foreach (Card card in img.transform.GetComponentsInChildren<Card>())
+                {
+                    card.attackedThisRound = false;
+                }
+            }
             currentPlayer = player;
         }
         currentPhase = "Play 1 Card";
@@ -267,6 +440,60 @@ public class GameManager : MonoBehaviour
             {
                 break;
             }
+        }
+        yield return new WaitForSeconds(0.5f);
+
+        List<Card> cardsInPlay = new List<Card>();
+        foreach (Image img in AIsmallSpaces)
+        {
+            cardsInPlay.AddRange(img.transform.GetComponentsInChildren<Card>());
+            
+        }
+        foreach (Image img in AImidSpaces)
+        {
+            cardsInPlay.AddRange(img.transform.GetComponentsInChildren<Card>());
+
+        }
+        foreach (Image img in AIbigSpaces)
+        {
+            cardsInPlay.AddRange(img.transform.GetComponentsInChildren<Card>());
+
+        }
+        List<Card> enemyCardsInPlay = new List<Card>();
+        foreach (Image img in smallSpaces)
+        {
+            enemyCardsInPlay.AddRange(img.transform.GetComponentsInChildren<Card>());
+
+        }
+        foreach (Image img in midSpaces)
+        {
+            enemyCardsInPlay.AddRange(img.transform.GetComponentsInChildren<Card>());
+
+        }
+        foreach (Image img in bigSpaces)
+        {
+            enemyCardsInPlay.AddRange(img.transform.GetComponentsInChildren<Card>());
+
+        }
+        foreach (Card card in cardsInPlay)
+        {
+            bool attacked = false;
+            foreach (Card enemyCard in enemyCardsInPlay)
+            {
+                if (TryToAttack(card, enemyCard))
+                {
+                    attacked = true;
+                    break;
+                }
+            }
+            if (attacked)
+            {
+                break;
+            }
+        }
+        while (CardAnimationHandler.instance.animating)
+        {
+            yield return null;
         }
         yield return new WaitForSeconds(0.5f);
         EndTurn();
