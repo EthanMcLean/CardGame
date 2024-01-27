@@ -12,6 +12,7 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
     public string zoneIn;
     public CardData data;
     public Image cardDisplay;
+    public Image cardArtDisplay;
     public Sprite cardBack;
     public bool attackedThisRound;
     public GameObject hit;

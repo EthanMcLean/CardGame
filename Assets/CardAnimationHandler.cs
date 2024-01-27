@@ -44,12 +44,15 @@ public class CardAnimationHandler : MonoBehaviour
         if (owner == GameManager.instance.ai && newZone == "Hand")
         {
             newCard.cardDisplay.sprite = newCard.cardBack;
+            newCard.cardArtDisplay.gameObject.SetActive(false);
             newCard.attack.transform.parent.gameObject.SetActive(false);
             newCard.defence.transform.parent.gameObject.SetActive(false);
         }
         else
         {
-            newCard.cardDisplay.sprite = data.cardSprite;
+        
+            newCard.cardArtDisplay.sprite = data.cardSprite;
+            newCard.cardArtDisplay.gameObject.SetActive(true);
             newCard.attack.transform.parent.gameObject.SetActive(true);
             newCard.defence.transform.parent.gameObject.SetActive(true);
         }
