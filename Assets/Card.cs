@@ -14,12 +14,31 @@ public class Card : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoin
     public Image cardDisplay;
     public Sprite cardBack;
     public bool attackedThisRound;
+    public GameObject hit;
+
+    public TMPro.TextMeshProUGUI attack;
+    public TMPro.TextMeshProUGUI defence;
+    public TMPro.TextMeshProUGUI damage;
+
+    public int currentDamage;
 
     public void CleanUpAfterMove()
     {
         GetComponent<Image>().raycastTarget = true;
         Destroy(emptySpace);
         transform.SetParent(destinationTrans);
+    }
+
+    public void UpdateFromData()
+    {
+        attack.text = data.attack.ToString();
+        defence.text = data.health.ToString();
+    }
+    public void SetDamage(int newDam)
+    {
+        currentDamage += newDam;
+        damage.text = currentDamage.ToString();
+        damage.transform.parent.gameObject.SetActive(true);
     }
 
     public void OnPointerDown(PointerEventData eventData)

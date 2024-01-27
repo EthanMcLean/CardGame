@@ -6,4 +6,6 @@ public class CardData : MonoBehaviour
 {
     public int size;
     public Sprite cardSprite;
+    public int attack;
+    public int health;
 }

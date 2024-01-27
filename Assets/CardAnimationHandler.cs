@@ -44,15 +44,20 @@ public class CardAnimationHandler : MonoBehaviour
         if (owner == GameManager.instance.ai && newZone == "Hand")
         {
             newCard.cardDisplay.sprite = newCard.cardBack;
+            newCard.attack.transform.parent.gameObject.SetActive(false);
+            newCard.defence.transform.parent.gameObject.SetActive(false);
         }
         else
         {
             newCard.cardDisplay.sprite = data.cardSprite;
+            newCard.attack.transform.parent.gameObject.SetActive(true);
+            newCard.defence.transform.parent.gameObject.SetActive(true);
         }
 
         newCard.zoneIn = newZone;
         newCard.data = data;
         newAnim.owner = owner;
+        newCard.UpdateFromData();
         currentAnimations.Add(newAnim);
         TryToTriggerNextAnimation();
 
@@ -126,9 +131,45 @@ public class CardAttackAnimation : GameAnimation
 
     public override IEnumerator AnimationCoroutine()
     {
+        float movementtoHitTimer = 0;
+        Vector3 startPoint = attacker.transform.position;
+        while (Vector3.Distance(attacker.transform.position,defender.transform.position) > 100)
+        {
+            attacker.transform.position = Vector3.Slerp(startPoint, defender.transform.position, movementtoHitTimer);
+            movementtoHitTimer += Time.deltaTime*10;
+            yield return null;
+        }
+        movementtoHitTimer = 0;
+
+        while (Vector3.Distance(attacker.transform.position, startPoint) > 1)
+        {
+            attacker.transform.position = Vector3.Slerp(defender.transform.position, startPoint, movementtoHitTimer);
+            movementtoHitTimer += Time.deltaTime * 10;
+            yield return null;
+        }
+
+
+        defender.hit.SetActive(true);
+        defender.SetDamage(attacker.data.attack);
+        yield return new WaitForSeconds(0.2f);
+        defender.hit.SetActive(false);
+
+
+
+        attacker.hit.SetActive(true);
+        attacker.SetDamage(defender.data.attack);
+        yield return new WaitForSeconds(0.2f);
+        attacker.hit.SetActive(false);
         yield return new WaitForSeconds(0.5f);
 
-        GameManager.instance.DestoryCardInCombat(defender);
+        if (defender.currentDamage >= defender.data.health)
+        {
+            GameManager.instance.DestoryCardInCombat(defender);
+        }
+        if (attacker.currentDamage >= attacker.data.health)
+        {
+            GameManager.instance.DestoryCardInCombat(attacker);
+        }
         CardAnimationHandler.instance.FinishAnimation();
         CardAnimationHandler.instance.TryToTriggerNextAnimation();
     }
