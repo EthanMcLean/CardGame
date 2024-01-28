@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    public void Start()
+    public void StartGame()
     {
         for (int i = 0; i < 5; i++)
         {   
