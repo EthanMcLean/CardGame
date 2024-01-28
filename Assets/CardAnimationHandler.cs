@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEngine.UI.GridLayoutGroup;
+using UnityEngine.UI;
 
 public class CardAnimationHandler : MonoBehaviour
 {
@@ -22,6 +22,15 @@ public class CardAnimationHandler : MonoBehaviour
 
     public Transform playerTalkingObject;
     public Transform aiTalkingObject;
+
+    public Image playerCharacterEmote;
+    public Image aiCharacterEmote;
+
+    public Sprite playerNormalSprite;
+    public Sprite aiNormalSprite;
+
+    public Sprite playerReactionSprite;
+    public Sprite aiReactionSprite;
 
     public void Awake()
     {
@@ -284,17 +293,22 @@ public class CardAttackAnimation : GameAnimation
             {
                 CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerTalking);
                 CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
+                CardAnimationHandler.instance.playerCharacterEmote.sprite = CardAnimationHandler.instance.playerReactionSprite;
             }
             else
             {
                 CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiTalking);
-                CardAnimationHandler.instance.aiTalkingObject.position = Vector3.zero;
+                CardAnimationHandler.instance.aiTalkingObject.localPosition = Vector3.zero;
+                CardAnimationHandler.instance.aiCharacterEmote.sprite = CardAnimationHandler.instance.aiReactionSprite;
             }
 
             while (CardAnimationHandler.instance.voice.isPlaying)
             {
                 yield return null;
             }
+
+            CardAnimationHandler.instance.aiCharacterEmote.sprite = CardAnimationHandler.instance.aiNormalSprite;
+            CardAnimationHandler.instance.playerCharacterEmote.sprite = CardAnimationHandler.instance.playerNormalSprite;
 
             CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerNotTalking);
             CardAnimationHandler.instance.playerTalkingObject.localPosition = Vector3.zero;
