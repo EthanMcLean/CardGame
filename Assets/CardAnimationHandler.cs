@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.UI.GridLayoutGroup;
 
 public class CardAnimationHandler : MonoBehaviour
 {
@@ -128,15 +130,18 @@ public class CardMovementAnimation: GameAnimation
     public override IEnumerator AnimationCoroutine()
     {
         card = cardToMove.GetComponent<Card>();
+        
         if (playCard && !skipVoice)
-        {
-            CardAnimationHandler.instance.voice.clip = owner.summonClip;
+        {   
+            /*
+            CardAnimationHandler.instance.voice.clip = owner.summonClip[Random.Range(0,owner.summonClip.Length)];
             CardAnimationHandler.instance.voice.Play();
+            */
             
         }
         else if (!skipVoice)
         {
-            CardAnimationHandler.instance.voice.clip = owner.drawClip;
+            CardAnimationHandler.instance.voice.clip = owner.drawClip[Random.Range(0, owner.drawClip.Length)];
 
             CardAnimationHandler.instance.voice.Play();
         }
@@ -213,7 +218,7 @@ public class CardAttackAnimation : GameAnimation
     public override IEnumerator AnimationCoroutine()
     {
 
-        CardAnimationHandler.instance.voice.clip = attacker.owner.attackClip;
+        CardAnimationHandler.instance.voice.clip = attacker.owner.attackClip[Random.Range(0, attacker.owner.attackClip.Length)];
         CardAnimationHandler.instance.voice.Play();
 
         if (attacker.owner == GameManager.instance.player)
@@ -286,7 +291,7 @@ public class CardAttackAnimation : GameAnimation
 
         if (defender.currentDamage >= defender.data.health)
         {
-            CardAnimationHandler.instance.voice.clip = defender.owner.negativeReaction;
+            CardAnimationHandler.instance.voice.clip = defender.owner.negativeReaction[Random.Range(0, defender.owner.negativeReaction.Length)];
             CardAnimationHandler.instance.voice.Play();
 
             if (defender.owner == GameManager.instance.player)
