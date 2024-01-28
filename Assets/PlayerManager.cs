@@ -15,10 +15,10 @@ public class PlayerManager : MonoBehaviour
 
     public Transform deckData;
 
-    public AudioClip summonClip;
-    public AudioClip drawClip;
-    public AudioClip attackClip;
-    public AudioClip negativeReaction;
+    public AudioClip[] summonClip;
+    public AudioClip[] drawClip;
+    public AudioClip[] attackClip;
+    public AudioClip[] negativeReaction;
 
     public void Awake()
     {
