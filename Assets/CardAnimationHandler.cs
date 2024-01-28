@@ -132,19 +132,21 @@ public class CardMovementAnimation: GameAnimation
         card = cardToMove.GetComponent<Card>();
         
         if (playCard && !skipVoice)
-        {   
+        {
             /*
             CardAnimationHandler.instance.voice.clip = owner.summonClip[Random.Range(0,owner.summonClip.Length)];
             CardAnimationHandler.instance.voice.Play();
             */
-            
+           
         }
         else if (!skipVoice)
         {
+           
             CardAnimationHandler.instance.voice.clip = owner.drawClip[Random.Range(0, owner.drawClip.Length)];
 
             CardAnimationHandler.instance.voice.Play();
         }
+
         if (owner == GameManager.instance.player && !skipVoice)
         {
             CardAnimationHandler.instance.playerTalkingObject.SetParent(CardAnimationHandler.instance.playerTalking);
@@ -164,7 +166,9 @@ public class CardMovementAnimation: GameAnimation
         
         if (playCard && !skipVoice)
         {
-            if(owner == GameManager.instance.player)
+            AudioManafer.instance.TriggerPlay();
+
+            if (owner == GameManager.instance.player)
             {
                 CardAnimationHandler.instance.voice.clip = card.data.playerNameClip;
             }
@@ -174,6 +178,10 @@ public class CardMovementAnimation: GameAnimation
             }
            
             CardAnimationHandler.instance.voice.Play();
+        }
+        else
+        {
+            AudioManafer.instance.TriggerDraw();
         }
       
 
@@ -246,7 +254,7 @@ public class CardAttackAnimation : GameAnimation
             CardAnimationHandler.instance.voice.clip = attacker.data.aiNameClip;
         }
         CardAnimationHandler.instance.voice.Play();
-     
+        AudioManafer.instance.TriggerAttack();
 
         float movementtoHitTimer = 0;
         Vector3 startPoint = attacker.transform.position;
@@ -320,9 +328,9 @@ public class CardAttackAnimation : GameAnimation
             CardAnimationHandler.instance.aiTalkingObject.SetParent(CardAnimationHandler.instance.aiNotTalking);
             CardAnimationHandler.instance.aiTalkingObject.localPosition = Vector3.zero;
 
+            AudioManafer.instance.TriggerTakeDamage();
+
             GameManager.instance.DestoryCardInCombat(defender);
-
-
         }
         if (attacker.currentDamage >= attacker.data.health)
         {
